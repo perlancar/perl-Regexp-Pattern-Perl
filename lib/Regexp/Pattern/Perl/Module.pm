@@ -5,6 +5,9 @@ package Regexp::Pattern::Perl::Module;
 # DIST
 # VERSION
 
+use strict;
+#use warnings;
+
 our %RE = (
     perl_modname => {
         pat => '\A[A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*\z',
