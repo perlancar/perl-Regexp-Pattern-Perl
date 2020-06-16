@@ -40,6 +40,6 @@ our %RE = (
 1;
 # ABSTRACT: Regexp patterns related to Perl modules
 
-=head1 SEE ALSO
+=head1 prepend:SEE ALSO
 
 Other C<Regexp::Pattern::Perl::*> modules.
