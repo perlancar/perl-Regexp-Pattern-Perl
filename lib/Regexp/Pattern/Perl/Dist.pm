@@ -10,13 +10,13 @@ use strict;
 
 our %RE = (
     perl_distname => {
-        pat => '\A[A-Za-z_][A-Za-z_0-9]*(?:-[A-Za-z_0-9]+)*\z',
+        pat => '[A-Za-z_][A-Za-z_0-9]*(?:-[A-Za-z_0-9]+)*',
         examples => [
-            {str=>'', matches=>0},
-            {str=>'Foo-Bar', matches=>1},
-            {str=>'Foo-0Bar', matches=>1},
-            {str=>'0Foo-Bar', matches=>0},
-            {str=>'Foo::Bar', matches=>0},
+            {str=>'', anchor=>1, matches=>0},
+            {str=>'Foo-Bar', anchor=>1, matches=>1},
+            {str=>'Foo-0Bar', anchor=>1, matches=>1},
+            {str=>'0Foo-Bar', anchor=>1, matches=>0},
+            {str=>'Foo::Bar', anchor=>1, matches=>0},
         ],
     },
 );

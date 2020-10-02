@@ -10,29 +10,29 @@ use strict;
 
 our %RE = (
     perl_modname => {
-        pat => '\A[A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*\z',
+        pat => '[A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*',
         examples => [
-            {str=>'', matches=>0},
-            {str=>'Foo::Bar', matches=>1},
-            {str=>'Foo::0Bar', matches=>1},
-            {str=>'0Foo::Bar', matches=>0},
-            {str=>'Foo/Bar', matches=>0},
+            {str=>'', anchor=>1, matches=>0},
+            {str=>'Foo::Bar', anchor=>1, matches=>1},
+            {str=>'Foo::0Bar', anchor=>1, matches=>1},
+            {str=>'0Foo::Bar', anchor=>1, matches=>0},
+            {str=>'Foo/Bar', anchor=>1, matches=>0},
         ],
     },
     perl_modname_with_optional_args => {
-        pat => '\A[A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*(?:=.*)?\z',
+        pat => '[A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*(?:=.*)?',
         examples => [
-            {str=>'', matches=>0},
-            {str=>'Foo::Bar', matches=>1},
-            {str=>'Foo::0Bar', matches=>1},
-            {str=>'0Foo::Bar', matches=>0},
-            {str=>'Foo/Bar', matches=>0},
+            {str=>'', anchor=>1, matches=>0},
+            {str=>'Foo::Bar', anchor=>1, matches=>1},
+            {str=>'Foo::0Bar', anchor=>1, matches=>1},
+            {str=>'0Foo::Bar', anchor=>1, matches=>0},
+            {str=>'Foo/Bar', anchor=>1, matches=>0},
 
-            {str=>'Foo::Bar=', matches=>1},
-            {str=>'Foo::Bar=a', matches=>1},
-            {str=>'Foo::Bar=a,b,c', matches=>1},
-            {str=>'Foo::Bar=a=1', matches=>1},
-            {str=>'=Foo::Bar', matches=>0},
+            {str=>'Foo::Bar=', anchor=>1, matches=>1},
+            {str=>'Foo::Bar=a', anchor=>1, matches=>1},
+            {str=>'Foo::Bar=a,b,c', anchor=>1, matches=>1},
+            {str=>'Foo::Bar=a=1', anchor=>1, matches=>1},
+            {str=>'=Foo::Bar', anchor=>1, matches=>0},
         ],
     },
 );
