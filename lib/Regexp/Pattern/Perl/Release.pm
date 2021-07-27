@@ -25,6 +25,7 @@ our %RE = (
     },
 );
 
+1;
 # ABSTRACT: Regexp patterns related to Perl release
 
 =head1 prepend:SEE ALSO
