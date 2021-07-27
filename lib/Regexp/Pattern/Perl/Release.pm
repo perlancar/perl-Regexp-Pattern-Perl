@@ -9,8 +9,8 @@ use strict;
 #use warnings;
 
 our %RE = (
-    perl_release_tarball_filename => {
-        summary => 'Proper filename of a typical distribution release tarball',
+    perl_release_archive_filename => {
+        summary => 'Proper filename of a typical distribution release archive (tarball/zip)',
         pat => qr/([A-Za-z_][A-Za-z0-9_]*(?:-[A-Za-z0-9_][A-Za-z0-9_]*)*)-
                   v?([0-9]+(?:\.[0-9]+){0,4}(?:_[0-9]+|-TRIAL)?)
                   \.(tar|tar\.(?:Z|gz|bz2|xz)|zip|rar)/x,
